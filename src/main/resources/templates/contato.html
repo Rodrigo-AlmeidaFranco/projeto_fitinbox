@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>FitINBOX</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <div class="col-12">
+                <div role="button" class="entrar mr-5 float-right" data-toggle="modal" data-target="#modalUsuario">
+                    Já possui conta? <b></b>Entre!</div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="home.html"><img src="img/logoFit.png" style="width: 20%;"></a>
+
+            <div class="collapse navbar-collapse" id="NavBarHome">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " style="width: 140px;" href="quemsomos.html">O Fit in Box</a>
+                    </li>
+                    <li class="nav-item navTexto">
+                        <a class="nav-link " style="width: 106px;" href="cardapio.html">Cardárpio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="width: 106px;" href="contato.html">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div class="container-fluid px-0">
+        <img class="w-100" src="img/fundoTitulo.jpg">
+        <h1 class="font-brown" style="position: absolute; margin-top: -13%; margin-left: 35%; font-size: 110px;">
+            CONTATO</h1>
+    </div>
+    <main>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-5 mt-5 ml-2 bg-light">
+                    <p>Precisa falar com a gente? Preencha o formulário abaixo, que entraremos em contato em no máximo
+                        24h!
+                    </p>
+                    <form>
+                        <div class="form-group mt-3">
+                            <h5>Nome Completo</h5>
+                            <input type="text" class="form-control" id="nomeCompleto" placeholder="Nome Completo">
+                        </div>
+                        <div class="form-group mt-">
+                            <h5>Assunto</h5>
+                            <input type="text" class="form-control" id="assunto" placeholder="Assunto">
+                        </div>
+                        <div class="form-group mt-3">
+                            <h5>E-mail</h5>
+                            <input type="text" class="form-control" id="email" placeholder="E-mail">
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <h5>Descrição</h5>
+                            <textarea class="form-control" id="descriçãoContato" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-6 mt-5 text-left">
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.3919187138167!2d-46.66453758554331!3d-23.554363667217853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce582dbf247b29%3A0x124271c7ebba5d05!2sUniversidade%20S%C3%A3o%20Judas%20Unidade%20Paulista!5e0!3m2!1spt-BR!2sbr!4v1567293772427!5m2!1spt-BR!2sbr"
+                        width="627" height="378" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    <br /><br />
+                    <h3>Venha nos visitar!</h3>
+                    <p> <b class="font-verde">Endereço:</b> Av. Angélica, 2345 - Boa Vista, São Paulo - SP <br />
+                        <b class="font-verde">Horário de Funcionamento:</b> Segunda à Sábado das 07:20h às 23h <br />
+                        <b class="font-verde">Telefone:</b>(11) 2948-1459;
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-fluid bg-light mt-5" style="font-size: 14px;">
+            <div class="row">
+                <div class="col-4 mt-5 text-center">
+                    <h5>O FITIN BOX</h5>
+                    Quer mudar seu estilo de vida de maneira prática? Então está no lugar certo!
+                    Nós da FitIn BOX temos como objetivo te ajudar com isso,
+                    conheça um de nossos produtos, e caso não goste, terá seu dinheiro de volta!.<br /><br />
+                </div>
+
+                <div class="col-4 mt-5 text-center">
+                        <h5>Navegue pelo site</h5>
+                        <a class="font-black" href="home.html">Home</a><br />
+                        <a class="font-black" href="quemsomos.html">Quem Somos</a><br />
+                        <a class="font-black" href="contato.html">Contato</a><br /><br />
+
+                    <h5>Formas de pagamento</h5>
+                    <img src="img/ico-master.png">
+                    <img src="img/ico-visa.png">
+                    <img src="img/ico-money.png" style="height:38px;">
+                </div>
+
+                <div class="col-md-4 mt-5 text-center">
+                    <h5>Segue lá!! </h5>
+                    <p>Nós siga nas redes sociais e fique por denrto de todas a nossas novidades!. </p>
+                    <div class="text-center">
+                        <img src="img/ico-insta.png">
+                        <img src="img/ico-facebook.png">
+                        <img src="img/ico-twitter.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL ENTRAR -->
+    <div class="modal fade " id="modalUsuario" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="" id="TituloModalCentralizado">Entre</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-4" style="padding-top: -5px">
+                            <img class="img_Modal" style="width: 200px;
+              height: 200px;" src="img/logoFit.png">
+                        </div>
+
+                        <div class="col-6 ml-3">
+                            <div class="form-group">
+                                <h5>Login:</h5>
+                                <input type="email" class="form-control" id="emailLogin" placeholder="nome@exemplo.com">
+                            </div>
+                            <div class="form-group">
+                                <h5>Senha:</h5>
+                                <input type="password" class="form-control" id="senhaLogin" placeholder="senha">
+                                <div class="form-check ml-4">
+                                    <input type="checkbox" style="margin-top: 8px;" class="form-check-input"
+                                        id="exampleCheck1">
+                                    <small>Manter-me conectado</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer pt-2">
+                        <button type="button" class="btn btn-verdeVazio"
+                            style="margin-right: 345px;">Cadastre-se</button>
+                        <button type="button" class="btn btn-verde" id="Login" onclick="Login()">Entrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function Login() {
+            var done = 0;
+            var usuario = document.querySelector('#emailLogin').value;
+            usuario = usuario.toLowerCase();
+            var senha = document.querySelector('#senhaLogin').value;
+            senha = senha.toLowerCase();
+
+            if ((usuario == "nadinyrajab" || usuario == "rodrigolopes") && senha == "12345") {
+                location.href = "pg-usuário.html";
+                done = 1;
+            }
+            if (done == 0) {
+                alert("Dados incorretos, tente novamente");
+            }
+        }
+    </script>
+</body>
+
+</html>

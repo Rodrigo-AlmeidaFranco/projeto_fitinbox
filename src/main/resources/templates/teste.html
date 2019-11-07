@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>FitINBOX</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+
+<style>
+    nav {
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        padding: 30px;
+        font-family: monospace;
+        background: #2E69C9;
+        transition: .3s;
+    }
+
+    /* A classe small é adicionada a barra de navegação, diminuindo o padding e o font-size geral dela. Mas você pode adicionar qualquer estilo que quiser. */
+    nav.small {
+        padding: 5px;
+        font-size: 80%;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        padding-top: 60px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    nav>a {
+        font-size: 2em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #15335E;
+    }
+
+    ul {
+        float: right;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    li>a {
+        color: white;
+        font-size: 1.4em;
+        padding: 5px 20px;
+        display: block;
+        text-transform: uppercase;
+    }
+
+    section {
+        max-width: 500px;
+        margin: 60px auto;
+    }
+
+    section h1 {
+        color: #E90F40;
+        font-size: 4em;
+        margin-bottom: 20px;
+    }
+
+    section p {
+        font-family: monospace;
+        font-size: 1.4em;
+        line-height: 1.5;
+    }
+</style>
+
+
+
+<body>
+    <nav>
+        <a href="#">The Company</a>
+        <ul>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h1>Section #1</h1>
+        <p>Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se o desenvolvimento contínuo de
+            distintas
+            formas de atuação exige a precisão e a definição do investimento em reciclagem técnica.</p>
+    </section>
+
+    <section>
+        <h1>Section #2</h1>
+        <p>Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se o desenvolvimento contínuo de
+            distintas
+            formas de atuação exige a precisão e a definição do investimento em reciclagem técnica.</p>
+    </section>
+
+    <section>
+        <h1>Section #3</h1>
+
+        <p>Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se o desenvolvimento contínuo de
+            distintas
+            formas de atuação exige a precisão e a definição do investimento em reciclagem técnica.</p>
+    </section>
+
+    <section>
+        <h1>Section #4</h1>
+        <p>Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se o desenvolvimento contínuo de
+            distintas
+            formas de atuação exige a precisão e a definição do investimento em reciclagem técnica.</p>
+    </section>
+
+    <section>
+        <h1>Section #5</h1>
+        <p>Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se o desenvolvimento contínuo de
+            distintas
+            formas de atuação exige a precisão e a definição do investimento em reciclagem técnica.</p>
+    </section>
+
+    <section>
+        <h1>Section #6</h1>
+        <p>Todas estas questões, devidamente ponderadas, levantam dúvidas sobre se o desenvolvimento contínuo de
+            distintas
+            formas de atuação exige a precisão e a definição do investimento em reciclagem técnica.</p>
+    </section>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        //     HTML CSS JSResult
+        // EDIT ON
+        // Ativa a função toda vez que o usuário utilizar o scroll
+        // Usa o debounce da biblioteca lodash, para evitar excessivos disparos da função ao scroll. Assim a função só vai disparar a cada 200ms, o tempo é informado ao final da função.
+        $(window).on('scroll', debounce(function () {
+
+            // Seleciona a navegação
+            // Identifica o tamanho total do menu
+            // Verifica a distância entre o scroll e o topo
+            var $nav = $('nav'),
+                navHeight = $nav.outerHeight(),
+                windowTop = $(this).scrollTop();
+
+            // Verifica quando a distância do scroll for maior que o tamanho total do menu
+            if (windowTop > navHeight) {
+                // Adiciona a classe small ao menu
+                $nav.addClass('small');
+                // Modifica o nome inteiro da empresa para uma sigla apenas
+                $('nav > a').text('TC');
+            } else {
+                // Remove a classe small do menu
+                $nav.removeClass('small');
+                // Coloca o nome inteiro da empresa novamente
+                $('nav > a').text('The Company');
+            }
+        }, 200));
+
+    </script>
+</body>
+
+</html>

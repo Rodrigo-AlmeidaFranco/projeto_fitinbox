@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>FitINBOX</title>
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  <header>
+    <div class="row">
+      <div class="col-12">
+        <div class="font-verde mr-5 float-right">
+          Olá!
+          <button class="btn-menu dropdown-toggle font-laranja" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span th:text="${cliente.nome}"></span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/dados">Meus dados</a>
+            <a class="dropdown-item" href="/pedidosl">Meus pedidos</a>
+            <a class="dropdown-item" href="/home">Sair</a>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="pg-usuário.html"><img src="img/logoFit.png" style="width: 20%;"></a>
+
+      <div class="collapse navbar-collapse" id="NavBarHome">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link " style="width: 140px;" href="/quemsomos">O Fit in Box</a>
+          </li>
+          <li class="nav-item navTexto">
+            <a class="nav-link " style="width: 106px;" href="/cardapio">Cardárpio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="width: 106px;" href="/contato">Contato</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+          </form> -->
+      </div>
+    </nav>
+    <div role="button" class="btn btn-verde btnCarrinho">
+        <img src="img/icon-carrinho.png" style="width:50%; margin-top: 5px;">
+     </div>
+  </header>
+
+  <main>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-12 mt-5">
+          <h3>Dados de conta</h3>
+        </div>
+
+        <div class="col-6">
+          <form>
+            <div class="form-group">
+              <label for="nomeUsuario">Nome Usuário</label>
+              <textarea class="form-control" id="" rows="1" th:text="${cliente.nome}"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="E-mail">E-mail</label>
+              <textarea class="form-control" id="" rows="1" th:text="${cliente.email}"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="senha">Senha</label>
+              <textarea class="form-control" id="" rows="1">Abc12345</textarea>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-6">
+          <form>
+            <div class="form-group">
+              <label for="nome">Nome Completo</label>
+              <textarea class="form-control" id="" rows="1" th:text="${cliente.nome}"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="CPF">CPF</label>
+              <textarea class="form-control" id="" rows="1" th:text="${cliente.CPF}"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone</label>
+              <textarea class="form-control" id="" rows="1" th:text="${cliente.telefone}"></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-11 mt-4">
+        <button type="button" class="btn btn-primary btn-verde float-right" style="width: 156px;">
+          Salvar Alterações</button>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-10 mt-5">
+          <h3>endereços cadastrados </h3>
+        </div>
+        <div class="col-4" th:each="end : ${endereco}">
+          <div class="col card mr-1" style="width: 20rem;">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-2">
+                  <img src="img/ico-home.png">
+                </div>
+                <div class="col-10 card-text" style="font-size: 12px;">
+                <span th:text="${end.nome}"></span><br />
+                  <span th:text="${end.logradouro}"></span><br />
+                   <span th:text="${end.cidade}"></span><br />
+                    <span th:text="${end.estado}"></span><br />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3 mt-4">
+        <form method="post" th:object="${end}"
+				th:action="@{/cadastrarEnd}">
+				<div class="form-group">
+              <label for="NomeLogradouro">Nome </label>
+              <textarea class="form-control" id="" rows="1" th:field="*{nome}"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="NomeLogradouro">Endereco</label>
+              <textarea class="form-control" id="" rows="1" th:field="*{logradouro}"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="NomeLogradouro">Numero</label>
+              <textarea class="form-control" id="" rows="1" th:field="*{numero}"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="NomeLogradouro">Cidade</label>
+              <textarea class="form-control" id="" rows="1" th:field="*{cidade}"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="NomeLogradouro">Estado</label>
+              <textarea class="form-control" id="" rows="1" th:field="*{estado}"></textarea>
+            </div>
+              <div class="col-11 mt-4">
+        <button type="submit" class="btn btn-primary btn-verde float-right" style="width: 156px;">
+          Adicionar Endereço</button>
+      </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container-fluid bg-light mt-5" style="font-size: 14px;">
+      <div class="row">
+        <div class="col-4 mt-5 text-center">
+          <h5>O FITIN BOX</h5>
+          Quer mudar seu estilo de vida de maneira prática? Então está no lugar certo!
+          Nós da FitIn BOX temos como objetivo te ajudar com isso,
+          conheça um de nossos produtos, e caso não goste, terá seu dinheiro de volta!.<br /><br />
+        </div>
+
+        <div class="col-4 mt-5 text-center">
+            <h5>Navegue pelo site</h5>
+            <a class="font-black" href="home.html">Home</a><br />
+            <a class="font-black" href="quemsomos.html">Quem Somos</a><br />
+            <a class="font-black" href="contato.html">Contato</a><br /><br />
+
+          <h5>Formas de pagamento</h5>
+          <img src="img/ico-master.png">
+          <img src="img/ico-visa.png">
+          <img src="img/ico-money.png" style="height:38px;">
+        </div>
+
+        <div class="col-md-4 mt-5 text-center">
+          <h5>Segue lá!! </h5>
+          <p>Nós siga nas redes sociais e fique por denrto de todas a nossas novidades!. </p>
+          <div class="text-center">
+            <img src="img/ico-insta.png">
+            <img src="img/ico-facebook.png">
+            <img src="img/ico-twitter.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+                integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+                crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+                integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+                crossorigin="anonymous"></script> -->
+  <script type="text/javascript">
+
+
+  </script>
+</body>
+
+</html>

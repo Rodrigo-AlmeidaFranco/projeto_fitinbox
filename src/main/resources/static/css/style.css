@@ -1,0 +1,260 @@
+body{
+font-size:18px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: black;
+background-image: url("img/frutas.jpg");
+}
+p{
+font-size:14px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@font-face {
+    font-family: Aminetta;
+    src: url(Aminetta.ttf);
+}
+
+@font-face {
+    font-family: Hipster Script;
+    src: url("fonts/Hipster Script W00 Regular.ttf");
+}
+
+
+@font-face {
+    font-family: DK Lemon Yellow Sun;
+    src: url("DK Lemon Yellow Sun.otf");
+}
+
+.bg-verde{
+    background-color:  #228b22;
+}
+
+.bordercolor-verde{
+    border-color: #228b22;
+}
+
+.bg-verdeEscuro{
+    background-color: #0d330d;
+}
+
+.bg-laranja{
+    background-color: #ff8c00;
+}
+
+.bordercolor-laranja{
+    border-color: #ff8c00;
+}
+
+.bg-amarelo{
+    background-color: #ffdb17;
+}
+
+.bg-vermelho{
+    background-color: #ff4500;
+}
+
+.bordercolor-vermelho{
+    border-color: #ff8c00;
+}
+
+.font-white{
+    color: #ffffffff;
+}
+
+.font-brown{
+    color: #482e2e;
+}
+
+.font-verde{
+    color: #228b22;
+}
+
+.font-laranja{
+    color: #ff8c00;
+}
+
+.font-vermelho{
+    color: #ff4500;
+}
+
+.font-black{
+    color: black;
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+    color: #228b22;
+    font-size:30px;
+    font-family: DK Lemon Yellow Sun;
+}
+.entrar{
+    color: #228b22;
+    font-size:15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.entrar:hover{
+    color: black;
+    font-size:15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h3, h5, h4, h2, h1, h6{
+    font-family: DK Lemon Yellow Sun;
+    color: #228b22;
+}
+
+.modal-content{
+    width: 600px !important;
+    height: 350px !important;
+    margin-left: 190px;
+}
+
+.btnCarrinho{
+    position: fixed ;
+    display: block;
+    top: 35px;
+    right: 0;
+    width: 74px !important;
+    height: 52px;
+    padding: 0px 0px 0px 0px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.btn-verde{
+    background-color: #228b22;
+    font-family: DK Lemon Yellow Sun;
+    font-size:18px;
+    color: #ffff;
+    width: 100px;
+}
+
+.btn-verdeVazio{
+    background-color: #ffff;
+    border:solid 2px;
+    font-family: DK Lemon Yellow Sun;
+    font-size:18px;
+    color: #228b22;
+    width: 100px;
+
+}.btn-verdeEscuroVazio{
+    background-color: #ffff;
+    border:solid 2px;
+    font-family: DK Lemon Yellow Sun;
+    font-size:18px;
+    color: #0d330d;
+    width: 100px;
+
+}
+
+.btn-laranjaVazio{
+    background-color: #ffff;
+    border:solid 2px;
+    font-family: DK Lemon Yellow Sun;
+    font-size:18px;
+    color: #ff8c00;
+    width: 100px;
+}
+
+.btn-vermelhoVazio{
+    background-color: #ffff;
+    border:solid 2px;
+    font-family: DK Lemon Yellow Sun;
+    font-size:18px;
+    color: #ff4500;
+    width: 100px;
+
+}
+
+.btn-amareloVazio{
+    background-color: #ffff;
+    border:solid 2px;
+    font-family: DK Lemon Yellow Sun;
+    font-size:18px;
+    color: #ffdb17;
+    width: 100px;
+
+}
+
+.btn-menu{
+    background: transparent;
+    border: none;
+    
+}
+
+.card-body :hover{
+    transform: scale(1.050);
+}
+
+.modal-ajustado{
+    width: 752px !important;
+    height: 492px !important;
+
+}
+
+.modal-dialog {
+    max-width: 1000px !important;
+}
+
+.cardSugestao{
+    font-size: 16px;
+    margin-right: 2em;
+    max-width: 15.5em;
+    transition: transform .3s;
+    width: 238px;
+}
+
+.card-pedido-verde{
+    width: 20rem;
+    border: solid 1px; 
+    border-color: #228b22;
+}
+
+.card-pedido-laranja{
+    width: 20rem;
+    border: solid 1px; 
+    border-color: #ff8c00;
+}
+
+.card-pedido-vermelho{
+    width: 20rem;
+    border: solid 1px; 
+    border-color: #ff4500;
+}
+
+textarea::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+  }
+  
+  textarea::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+  }
+  
+  textarea::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+  }
+  
+  textarea{
+    resize: none;
+    background-color: #efe9e5;
+    border: none;
+  }
+
+  a:hover{
+    text-decoration: none;
+    color:black;
+  }
+
+  a{
+    : none;
+  }
+
+ 
+
+
+
+1107
+189
+
+128

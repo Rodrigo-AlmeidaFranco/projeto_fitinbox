@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>FitINBOX</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <div class="col-12">
+                <div role="button" class="entrar mr-5 float-right" data-toggle="modal" data-target="#modalUsuario">
+                    Já possui conta? <b></b>Entre!</div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+            <a class="navbar-brand" href="home.html"><img src="img/logoFit.png" style="width: 20%;"></a>
+
+            <div class="collapse navbar-collapse" id="NavBarHome">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " style="width: 140px;" href="/quemsomos">O Fit in Box</a>
+                    </li>
+                    <li class="nav-item navTexto">
+                        <a class="nav-link " style="width: 106px;" href="/cardapio">Cardárpio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="width: 106px;" href="/contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div role="button" class="btn btn-verde btnCarrinho" href="pg-carrinho">
+            <img src="img/icon-carrinho.png" style="width:50%; margin-top: 5px;">
+        </div>
+    </header>
+
+
+
+
+
+    <div class="container-fluid px-0">
+        <img class="w-100" src="img/fundoTitulo.jpg" style="height:10%;">
+        <h1 class="font-brown" style="position: absolute; margin-top: -13%; margin-left: 35%; font-size: 110px;">
+            PRODUTOS</h1>
+    </div>
+    <main>
+        <div class="container">
+
+            <div class="row" style="margin-left: 684px;">
+                <div class="my-4 mx-2"><button type="button" class="btn btn-verdeVazio w-100"
+                        onclick="mostraSaladas()">Saladas</button></div>
+                <div class=" my-4 mx-2"><button type="button" class="btn btn-laranjaVazio w-100"
+                        onclick="mostraIniciantes()">Iniciantes</button>
+                </div>
+                <div class=" my-4 mx-2 "><button type="button" class="btn btn-vermelhoVazio w-100"
+                        onclick="mostraAperitivos()">Aperitivos</button>
+                </div>
+                <div class=" my-4 mx-2 "><button type="button" class="btn btn-verdeEscuroVazio w-100"
+                        onclick="mostraTodos()">Todos</button>
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <!-- SALADAS -->
+        <div class="container saladas d-none" id=containerSaladas>
+            <div class="row">
+
+                <div class="cardtotal mx-2 mt-3" th:each="listaSal : ${listaSaladas}">
+                    <div role="button" class="card" style="width: 13rem; border:none !important">
+                        <img src="img/saladas-summer-salad.jpg" class="card-img-top" alt="...">
+                        <div class="card-body bg-verde mt-1 px-0 py-1">
+                            <div class="row">
+                                <h4 class="col-10 ml-3 card-title font-white text-center" th:text="${listaSal.nome}"></h4>
+                                <h5 class="col-8 font-white text-right" th:text="${listaSal.preco}">
+                                </h5>
+                                <div role="button" class="col-4 text-center">
+                                    <img src="img/ico-pesquisa.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INICIANTES -->
+        <div class="container iniciantes d-none" id="containerIniciantes">
+            <div class="row">
+                <div class="cardtotal mx-2 mt-3" th:each="listaIni : ${listaInici}">
+                    <div role="button" class="card" style="width: 13rem; border:none !important">
+                        <img src="img/iniciante-steak-cheese.jpg" class="card-img-top" alt="...">
+                        <div class="card-body bg-laranja mt-1 px-0 py-1">
+                            <div class="row">
+                                <h4 class="col-10 ml-3 card-title font-white text-center" th:text="${listaIni.nome}"></h4>
+                                <h5 class="col-8 font-white text-right" th:text="${listaIni.preco}">
+                                </h5>
+                                <div class="col-4 text-center">
+                                    <img src="img/ico-pesquisa.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- APERITIVOS -->
+        <div class="container aperitivos d-none" id="containerAperitivos">
+            <div class="row">
+                <div class="cardtotal mx-2 mt-3" th:each="listaApe : ${listaAperitivo}">
+                    <div role="button" class="card" style="width: 13rem; border:none !important">
+                        <img src="img/aperitivo-boi-na-chapa.jpg" class="card-img-top" alt="...">
+                        <div class="card-body bg-vermelho mt-1 px-0 py-1">
+                            <div class="row">
+                                <h4 class="col-10 ml-3 card-title font-white text-center" th:text="${listaApe.nome}"></h4>
+                                <h5 class="col-8 font-white text-right" th:text="${listaApe.preco}">
+                                </h5>
+                                <div class="col-4 text-center">
+                                    <img src="img/ico-pesquisa.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <footer>
+        <div class="container-fluid bg-light mt-5" style="font-size: 14px;">
+            <div class="row">
+                <div class="col-4 mt-5 text-center">
+                    <h5>O FITIN BOX</h5>
+                    Quer mudar seu estilo de vida de maneira prática? Então está no lugar certo!
+                    Nós da FitIn BOX temos como objetivo te ajudar com isso,
+                    conheça um de nossos produtos, e caso não goste, terá seu dinheiro de volta!.<br /><br />
+                </div>
+
+                <div class="col-4 mt-5 text-center">
+                        <h5>Navegue pelo site</h5>
+                        <a class="font-black" href="/home">Home</a><br />
+                        <a class="font-black" href="/quemsomos">Quem Somos</a><br />
+                        <a class="font-black" href="/contato">Contato</a><br /><br />
+
+                    <h5>Formas de pagamento</h5>
+                    <img src="img/ico-master.png">
+                    <img src="img/ico-visa.png">
+                    <img src="img/ico-money.png" style="height:38px;">
+                </div>
+
+                <div class="col-md-4 mt-5 text-center">
+                    <h5>Segue lá!! </h5>
+                    <p>Nós siga nas redes sociais e fique por denrto de todas a nossas novidades!. </p>
+                    <div class="text-center">
+                        <img src="img/ico-insta.png">
+                        <img src="img/ico-facebook.png">
+                        <img src="img/ico-twitter.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL SALADA -->
+    <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog " role="document" style="width: 751px;">
+            <div class="modal-content modal-ajustado ml-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Salada Hawaiana</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-5 mt-3">
+                            <img src="img/saladas-salada-hawaiana.jpg" style="width: 280px; height: 290px;">
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6>Composição</h6>
+                                    <p>Mix de folhas (alface do tipo lisa e rúcula),<br />
+                                        Mix de vegetais frios (pepino e cenoura),<br />
+                                        Mix de frutas (uva e abacaxi).</p>
+                                </div>
+
+                                <div class="col-5 ml-3 mt-2 px-0">
+                                    <h6> quantidade </h6>
+                                    <div class="mt-3">
+                                        <button type="button" id="menos" onclick="less()"
+                                            style="background: transparent; border:none; outline: none;">
+                                            <img src="img/ico-menos-verde.png" style="height: 20px; width: 20px">
+                                        </button> &nbsp;
+                                        <input class="disabled" type="number" name="numero" id="num"
+                                            style="width: 38px; ">
+                                        &nbsp;
+
+                                        <button type="button" id="mais" onclick="more()"
+                                            style="background: transparent; border:none; outline: none;">
+                                            <img src="img/ico-mais-verde.png" style="height: 20px; width: 20px">
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="col-5 ml-4 mt-2 px-0">
+                                    <h6> tamanho </h6>
+                                    <button type="button" onclick="trocaCaixas2()"
+                                        style="background: transparent; border:none; outline: none;">
+                                        <img class="" id="caixa330AV" src="img/ico-caixa-aberta-verde-330.PNG"
+                                            style="height: 40px; width: 40px ">
+                                        <img class="d-none" id="caixa330FV" src="img/ico-caixa-fechada-verde-330.PNG"
+                                            style="height: 40px; width: 40px "><br />
+                                        <p style="color:#228b22">330MG</p>
+                                    </button>
+                                    <button type="button" onclick="trocaCaixas()"
+                                        style="background: transparent; border:none; outline: none;">
+                                        <img class="" id="caixa550AV" src="img/ico-caixa-aberta-verde-550.PNG"
+                                            style="height: 40px; width: 40px ">
+                                        <img class="d-none" id="caixa550FV" src="img/ico-caixa-fechada-verde-550.PNG"
+                                            style="height: 40px; width: 40px "><br />
+                                        <p style="color:#228b22">550MG</p>
+                                    </button>
+                                </div>
+                                <div class="col-12 ml-4 mt-2 px-0">
+                                    <h6>Mais alguma coisa? Adicione as informações necessárias</h6>
+                                    <textarea rows="2" cols="38"> </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary btn-verdeVazio ">VOLTAR</button> -->
+                        <button type="button" class="btn btn-primary btn-verde" style="width: 156px;">
+                            <a class="font-white" href="/carrinho">Adicionar ao carrinho</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- MODAL ENTRAR -->
+        <div class="modal fade" id="modalUsuario" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="" id="TituloModalCentralizado">Entre</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-4" style="padding-top: -5px">
+                                <img class="img_Modal" style="width: 200px;
+              height: 200px;" src="img/logoFit.png">
+                            </div>
+
+                            <div class="col-6 ml-3">
+                                <div class="form-group">
+                                    <h5>Login:</h5>
+                                    <input type="email" class="form-control" id="emailLogin"
+                                        placeholder="nome@exemplo.com">
+                                </div>
+                                <div class="form-group">
+                                    <h5>Senha:</h5>
+                                    <input type="password" class="form-control" id="senhaLogin" placeholder="senha">
+                                    <div class="form-check ml-4">
+                                        <input type="checkbox" style="margin-top: 8px;" class="form-check-input"
+                                            id="exampleCheck1">
+                                        <small>Manter-me conectado</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer pt-2">
+                            <button type="button" class="btn btn-verdeVazio"
+                                style="margin-right: 345px;">Cadastre-se</button>
+                            <button type="button" class="btn btn-verde" id="Login" onclick="Login()">Entrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        function Login() {
+            var done = 0;
+            var usuario = document.querySelector('#emailLogin').value;
+            usuario = usuario.toLowerCase();
+            var senha = document.querySelector('#senhaLogin').value;
+            senha = senha.toLowerCase();
+
+            if ((usuario == "nadinyrajab" || usuario == "rodrigolopes") && senha == "12345") {
+                location.href = "pg-usuário.html";
+                done = 1;
+            }
+            if (done == 0) {
+                alert("Dados incorretos, tente novamente");
+            }
+        }
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+            if (scroll > 500) {
+                $('.menu').css('background-color', 'yellow');
+            } else {
+                $('.menu').css('background-color', 'blue');
+            }
+        });
+
+        // FUNCÇÃO MAIS E MENOS - QUANTIDADE
+        numero = 0;
+
+        function less() {
+            numero--;
+            setValue(numero);
+        }
+
+        function more() {
+            numero++;
+            setValue(numero);
+        }
+
+        function setValue(value) {
+            document.getElementById('num').value = value;
+        }
+
+        setValue(numero);
+
+
+        var caixa550verde = document.querySelector('#550verde');
+        caixa550AV = document.querySelector('#caixa550AV');
+        caixa550FV = document.querySelector('#caixa550AF');
+        containerSaladas = document.querySelector('#containerSaladas');
+        containerAperitivos = document.querySelector('#containerAperitivos');
+        containerIniciantes = document.querySelector('#containerIniciantes');
+
+
+
+
+        function trocaCaixas() {
+            caixa550AV.classList.add('d-none');
+            caixa550FV.classList.remove('d-none');
+        }
+
+        function trocaCaixas2() {
+            caixa330AV.classList.add('d-none');
+            caixa330FV.classList.remove('d-none');
+        }
+
+
+
+
+        function mostraSaladas() {
+            containerSaladas.classList.remove('d-none');
+            containerIniciantes.classList.add('d-none');
+            containerAperitivos.classList.add('d-none');
+        }
+
+        function mostraIniciantes() {
+            containerSaladas.classList.add('d-none');
+            containerIniciantes.classList.remove('d-none');
+            containerAperitivos.classList.add('d-none');
+        }
+
+        function mostraAperitivos() {
+            containerSaladas.classList.add('d-none');
+            containerIniciantes.classList.add('d-none');
+            containerAperitivos.classList.remove('d-none');
+        }
+
+        function mostraTodos() {
+            containerSaladas.classList.remove('d-none');
+            containerIniciantes.classList.remove('d-none');
+            containerAperitivos.classList.remove('d-none');
+        }
+
+
+    </script>
+</body>
+
+</html>
